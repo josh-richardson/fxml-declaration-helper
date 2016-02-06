@@ -1,0 +1,45 @@
+<idea-plugin version="2">
+  <id>com.eagles13.fxmldeclarationhelper</id>
+  <name>FXML Declaration Helper</name>
+  <version>1.1</version>
+  <vendor email="hello@rchrdsn.uk" url="http://www.rchrdsn.uk">Eagles13</vendor>
+
+  <description><![CDATA[
+      This extension lets you easily extract control declarations from FXML files, and copy them to the clipboard, whereupon you can use them!
+    ]]></description>
+
+  <change-notes><![CDATA[
+      v0.1 - initial release.
+    ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="FXMLGenerator.generateFXML" class="generateFXML" text="Copy Java declarations from FXML"
+            description="Generates names for controls in a java file based on control names in an FXML file.">
+      <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="CutCopyPasteGroup" anchor="before"/>
+    </action>
+  </actions>
+
+</idea-plugin>
