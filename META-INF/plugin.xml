@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.eagles13.fxmldeclarationhelper</id>
   <name>FXML Declaration Helper</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <vendor email="hello@rchrdsn.uk" url="http://www.rchrdsn.uk">Eagles13</vendor>
 
   <description><![CDATA[
@@ -12,6 +12,17 @@
       v0.1 - initial release.
     ]]>
   </change-notes>
+
+  <change-notes><![CDATA[
+      v1.0 and 1.1 - Re-worked addon and implemented contextmenu.
+    ]]>
+  </change-notes>
+
+  <change-notes><![CDATA[
+      v1.2 - Fixed various bugs.
+    ]]>
+  </change-notes>
+
 
   <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
   <idea-version since-build="131"/>
@@ -36,7 +47,7 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="FXMLGenerator.generateFXML" class="generateFXML" text="Copy Java declarations from FXML"
+    <action id="FXMLGenerator.generateFXML" class="generateFXML" text="Copy declarations from FXML"
             description="Generates names for controls in a java file based on control names in an FXML file.">
       <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="CutCopyPasteGroup" anchor="before"/>
     </action>

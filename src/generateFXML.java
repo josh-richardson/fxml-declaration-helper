@@ -48,11 +48,9 @@ public class generateFXML extends AnAction {
 
         for (String ln: contents.split("<")) {
             if (ln.contains("fx:id")) {
-                toCopy += "@FXML" + newLine + "private ";
-                toCopy += ln.substring(0, ln.indexOf(" ")).replace(newLine, "") + " ";
                 int startIndex = ln.indexOf("fx:id=") + 7;
-                int endIndex = ln.indexOf(" ", startIndex) - 1;
-                toCopy += ln.substring(startIndex, endIndex) + ";" + newLine;
+                toCopy += "@FXML" + newLine + "private " + ln.substring(0, ln.indexOf(" ")).replace(newLine, "") + " " + ln.substring(startIndex, ln.indexOf(" ", startIndex) - 1).replaceAll("\\p{Punct}", "") + ";" + newLine;
+
             }
         }
         StringSelection selection = new StringSelection(toCopy);
